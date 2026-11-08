@@ -1,0 +1,16 @@
+Task: Record what happened since the last pass as signals. Observations only.
+
+## Input from the previous step
+{
+  "request": "Scheduled run (cron `0 6 * * *`)",
+  "scheduled": true,
+  "cron": "0 6 * * *",
+  "firedAtMs": 1794117600003
+}
+
+Request for this run:
+Scheduled run (cron `0 6 * * *`)
+Outcome: Stopping: the `http_request` call was retried 3 times with identical arguments and kept failing — repeating it will not help. Last error:
+HTTP 403
+
+This looks unrecoverable in the current environment. Report this back instead of retrying.

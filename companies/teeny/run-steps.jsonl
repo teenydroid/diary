@@ -1442,3 +1442,22 @@
 {"runId":"01a1b4980bb3-000000000356","stepSeq":13,"atMillis":1794031324823,"step":{"kind":"tool_call","status":"error","label":"Record Entry","detail":"fields=5 fields · id=scout-observes-only-itself · ledger=learnings","result":"Something went wrong with this action.","failure":"failed","elapsedMs":2}}
 {"runId":"01a1b4980bb3-000000000356","stepSeq":14,"atMillis":1794031328479,"step":{"kind":"tool_call","status":"running","label":"Record Entry"}}
 {"runId":"01a1b4980bb3-000000000356","stepSeq":14,"atMillis":1794031328509,"step":{"kind":"tool_call","status":"ok","label":"Record Entry","detail":"fields=6 fields · id=scout-observes-only-itself · ledger=learnings","result":"1.8k characters","elapsedMs":22}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":0,"atMillis":1794117603127,"step":{"kind":"tool_call","status":"running","label":"Read Ledger"}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":0,"atMillis":1794117603140,"step":{"kind":"tool_call","status":"ok","label":"Read Ledger","detail":"ledger=tasks · sort=recent","result":"4.8k characters","elapsedMs":4}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":1,"atMillis":1794117603220,"step":{"kind":"tool_call","status":"running","label":"Read Ledger"}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":1,"atMillis":1794117603224,"step":{"kind":"tool_call","status":"ok","label":"Read Ledger","detail":"ledger=goals","result":"55 characters","elapsedMs":1}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":2,"atMillis":1794117603226,"step":{"kind":"tool_call","status":"running","label":"Read Ledger"}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":2,"atMillis":1794117603227,"step":{"kind":"tool_call","status":"ok","label":"Read Ledger","detail":"ledger=learnings · sort=recent","result":"15.1k characters","elapsedMs":4}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":3,"atMillis":1794117603235,"step":{"kind":"tool_call","status":"running","label":"List Ledgers"}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":3,"atMillis":1794117603239,"step":{"kind":"tool_call","status":"ok","label":"List Ledgers","result":"2.7k characters","elapsedMs":11}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":4,"atMillis":1794117603253,"step":{"kind":"tool_call","status":"running","label":"Workspace List"}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":4,"atMillis":1794117603254,"step":{"kind":"tool_call","status":"ok","label":"Workspace List","result":"Company workspace — 11 of 11 entries. Read one with `workspace_read` using its path or id.\nfile\tGoals.md\tid=01a09fadaa98-000000000000\trev=1789385353880\nfolder\tPlaybooks\tid=01a09fadaaa2-000000000003\tre…","elapsedMs":1}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":5,"atMillis":1794117605477,"step":{"kind":"tool_call","status":"running","label":"Http Request"}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":5,"atMillis":1794117605542,"step":{"kind":"tool_call","status":"error","label":"Http Request","detail":"url=https://api.github.com/orgs/tinyhumansai/repos?p…","result":"The saved sign-in details are missing or no longer valid.","failure":"unauthorized","elapsedMs":54}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":6,"atMillis":1794117608131,"step":{"kind":"tool_call","status":"running","label":"Http Request"}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":6,"atMillis":1794117608190,"step":{"kind":"tool_call","status":"error","label":"Http Request","detail":"url=https://api.github.com/orgs/tinyhumansai/repos?p…","result":"The saved sign-in details are missing or no longer valid.","failure":"unauthorized","elapsedMs":41}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":7,"atMillis":1794117610044,"step":{"kind":"tool_call","status":"running","label":"Http Request"}}
+{"runId":"01a1b9be037a-000000000363","stepSeq":7,"atMillis":1794117610143,"step":{"kind":"tool_call","status":"error","label":"Http Request","detail":"url=https://api.github.com/orgs/tinyhumansai/repos?p…","result":"The saved sign-in details are missing or no longer valid.","failure":"unauthorized","elapsedMs":41}}
+{"runId":"01a1b9be2ae4-000000000369","stepSeq":0,"atMillis":1794117614379,"step":{"kind":"tool_call","status":"running","label":"Read Ledger"}}
+{"runId":"01a1b9be2ae4-000000000369","stepSeq":0,"atMillis":1794117614383,"step":{"kind":"tool_call","status":"ok","label":"Read Ledger","detail":"ledger=signals · limit=2 · sort=recent","result":"2.8k characters","elapsedMs":3}}
+{"runId":"01a1b9be2ae4-000000000369","stepSeq":1,"atMillis":1794117614414,"step":{"kind":"tool_call","status":"running","label":"Http Request"}}
