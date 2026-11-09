@@ -1524,3 +1524,21 @@
 {"runId":"01a1bee5f079-000000000386","stepSeq":5,"atMillis":1794204153307,"step":{"kind":"tool_call","status":"ok","label":"List Ledgers","result":"2.7k characters","elapsedMs":12}}
 {"runId":"01a1bee5f079-000000000386","stepSeq":6,"atMillis":1794204153309,"step":{"kind":"tool_call","status":"running","label":"Read Ledger"}}
 {"runId":"01a1bee5f079-000000000386","stepSeq":6,"atMillis":1794204166521,"step":{"kind":"tool_call","status":"ok","label":"Read Ledger","detail":"ledger=learnings","result":"2.0k characters","elapsedMs":1}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":7,"atMillis":1794204187583,"step":{"kind":"tool_call","status":"running","label":"Record Entry"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":7,"atMillis":1794204187823,"step":{"kind":"tool_call","status":"ok","label":"Record Entry","detail":"fields=6 fields · id=recipe-in-a-ledger-does-not-reach-the-agent · ledger=learnings","result":"1.8k characters","elapsedMs":237}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":8,"atMillis":1794204187825,"step":{"kind":"tool_call","status":"running","label":"Record Entry"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":8,"atMillis":1794204187862,"step":{"kind":"tool_call","status":"ok","label":"Record Entry","detail":"fields=5 fields · id=learning-delivery-costs-one-pass · ledger=learnings","result":"1.2k characters","elapsedMs":29}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":9,"atMillis":1794204205291,"step":{"kind":"tool_call","status":"running","label":"Record Entry"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":9,"atMillis":1794204205324,"step":{"kind":"tool_call","status":"ok","label":"Record Entry","detail":"fields=2 fields · id=openhuman-first-measured-delta · ledger=learnings","result":"1.4k characters","elapsedMs":30}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":10,"atMillis":1794204205326,"step":{"kind":"tool_call","status":"running","label":"Record Entry"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":10,"atMillis":1794204205361,"step":{"kind":"tool_call","status":"ok","label":"Record Entry","detail":"fields=7 fields · id=token-price-is-not-the-company · ledger=learnings","result":"1.7k characters","elapsedMs":28}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":11,"atMillis":1794204219676,"step":{"kind":"tool_call","status":"running","label":"File Write"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":11,"atMillis":1794204219689,"step":{"kind":"tool_call","status":"ok","label":"File Write","detail":"content=# Goals (draft, for the operator to accept or re… · path=goals-draft.md","result":"36 characters","elapsedMs":5}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":12,"atMillis":1794204221623,"step":{"kind":"tool_call","status":"running","label":"Publish Artifact"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":12,"atMillis":1794204221633,"step":{"kind":"tool_call","status":"error","label":"Publish Artifact","detail":"kind=markdown · note=Draft goals for the operator; the goals ledger i… · path=goals-draft.md · title=Draft goals for Teeny (not recorded)","result":"Something went wrong with this action.","failure":"failed","elapsedMs":3}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":13,"atMillis":1794204224773,"step":{"kind":"tool_call","status":"running","label":"Read Ledger"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":13,"atMillis":1794204224784,"step":{"kind":"tool_call","status":"ok","label":"Read Ledger","detail":"entry=scribe-cannot-write-signals · ledger=learnings","result":"1.6k characters","elapsedMs":1}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":14,"atMillis":1794204228225,"step":{"kind":"tool_call","status":"running","label":"Read Ledger"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":14,"atMillis":1794204228235,"step":{"kind":"tool_call","status":"ok","label":"Read Ledger","detail":"ledger=tasks","result":"4.8k characters","elapsedMs":1}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":15,"atMillis":1794204233462,"step":{"kind":"tool_call","status":"running","label":"Record Entry"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":15,"atMillis":1794204233573,"step":{"kind":"tool_call","status":"ok","label":"Record Entry","detail":"fields=4 fields · id=scribe-cannot-write-signals · ledger=learnings","result":"1.8k characters","elapsedMs":100}}
