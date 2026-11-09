@@ -1510,3 +1510,17 @@
 {"runId":"01a1bee45f3a-000000000378","stepSeq":11,"atMillis":1794204089239,"step":{"kind":"tool_call","status":"ok","label":"Http Request","detail":"headers=2 fields · url=https://api.coingecko.com/api/v3/coins/tiny-huma…","result":"2.2k characters","elapsedMs":428}}
 {"runId":"01a1bee45f3a-000000000378","stepSeq":12,"atMillis":1794204097602,"step":{"kind":"tool_call","status":"running","label":"Record Entry"}}
 {"runId":"01a1bee45f3a-000000000378","stepSeq":12,"atMillis":1794204097640,"step":{"kind":"tool_call","status":"ok","label":"Record Entry","detail":"fields=6 fields · id=tiny-token-first-market-read · ledger=signals","result":"1.8k characters","elapsedMs":28}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":0,"atMillis":1794204105338,"step":{"kind":"tool_call","status":"running","label":"Read Ledger"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":0,"atMillis":1794204105344,"step":{"kind":"tool_call","status":"ok","label":"Read Ledger","detail":"ledger=signals · limit=3 · sort=recent","result":"5.1k characters","elapsedMs":2}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":1,"atMillis":1794204105366,"step":{"kind":"tool_call","status":"running","label":"Read Ledger"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":1,"atMillis":1794204105367,"step":{"kind":"tool_call","status":"ok","label":"Read Ledger","detail":"ledger=goals","result":"55 characters","elapsedMs":1}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":2,"atMillis":1794204108660,"step":{"kind":"tool_call","status":"running","label":"Read Ledger"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":2,"atMillis":1794204108667,"step":{"kind":"tool_call","status":"ok","label":"Read Ledger","detail":"ledger=signals · limit=5 · sort=recent · status=new","result":"4.4k characters","elapsedMs":2}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":3,"atMillis":1794204108668,"step":{"kind":"tool_call","status":"running","label":"Http Request"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":3,"atMillis":1794204121152,"step":{"kind":"tool_call","status":"ok","label":"Http Request","detail":"headers=1 field · url=https://api.coingecko.com/api/v3/coins/tiny-huma…","result":"2.3k characters","elapsedMs":73}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":4,"atMillis":1794204135454,"step":{"kind":"tool_call","status":"running","label":"Http Request"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":4,"atMillis":1794204135672,"step":{"kind":"tool_call","status":"ok","label":"Http Request","detail":"headers=1 field · url=https://api.github.com/search/repositories?q=rep…","result":"6.7k characters","elapsedMs":210}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":5,"atMillis":1794204153292,"step":{"kind":"tool_call","status":"running","label":"List Ledgers"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":5,"atMillis":1794204153307,"step":{"kind":"tool_call","status":"ok","label":"List Ledgers","result":"2.7k characters","elapsedMs":12}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":6,"atMillis":1794204153309,"step":{"kind":"tool_call","status":"running","label":"Read Ledger"}}
+{"runId":"01a1bee5f079-000000000386","stepSeq":6,"atMillis":1794204166521,"step":{"kind":"tool_call","status":"ok","label":"Read Ledger","detail":"ledger=learnings","result":"2.0k characters","elapsedMs":1}}
