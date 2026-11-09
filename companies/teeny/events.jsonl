@@ -1129,3 +1129,12 @@
 {"seq":1128,"company":"teeny","event":{"kind":"WorkflowNodeStarted","workflow_id":"reflect","run_id":"01a1bee45f07-000000000377","node_id":"look"},"at_millis":1794204000071}
 {"seq":1129,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1bee45f3a-000000000378","attempt":1,"to":"pending"},"at_millis":1794204000100}
 {"seq":1130,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1bee45f3a-000000000378","attempt":1,"from":"pending","to":"running"},"at_millis":1794204000156}
+{"seq":1131,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794204054467}
+{"seq":1132,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794204066211}
+{"seq":1133,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794204072054}
+{"seq":1134,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794204097629}
+{"seq":1135,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1bee45f3a-000000000378","attempt":1,"from":"running","to":"succeeded"},"at_millis":1794204102767}
+{"seq":1136,"company":"teeny","event":{"kind":"WorkflowNodeFinished","workflow_id":"reflect","run_id":"01a1bee45f07-000000000377","node_id":"look","status":"ok","elapsed_ms":102712,"agent_run_id":"01a1bee45f3a-000000000378"},"at_millis":1794204102771}
+{"seq":1137,"company":"teeny","event":{"kind":"WorkflowNodeStarted","workflow_id":"reflect","run_id":"01a1bee45f07-000000000377","node_id":"learn"},"at_millis":1794204102781}
+{"seq":1138,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1bee5f079-000000000386","attempt":1,"to":"pending"},"at_millis":1794204102791}
+{"seq":1139,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1bee5f079-000000000386","attempt":1,"from":"pending","to":"running"},"at_millis":1794204102804}
