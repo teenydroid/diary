@@ -1162,3 +1162,14 @@
 {"seq":1161,"company":"teeny","event":{"kind":"WorkflowNodeStarted","workflow_id":"reflect","run_id":"01a1c40abb0b-0000000003a3","node_id":"look"},"at_millis":1794290400359}
 {"seq":1162,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1c40abc3e-0000000003a4","attempt":1,"to":"pending"},"at_millis":1794290400413}
 {"seq":1163,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1c40abc3e-0000000003a4","attempt":1,"from":"pending","to":"running"},"at_millis":1794290400485}
+{"seq":1164,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794290528365}
+{"seq":1165,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794290528397}
+{"seq":1166,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794290534773}
+{"seq":1167,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794290540951}
+{"seq":1168,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794290540981}
+{"seq":1169,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794290541006}
+{"seq":1170,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1c40abc3e-0000000003a4","attempt":1,"from":"running","to":"succeeded"},"at_millis":1794290562438}
+{"seq":1171,"company":"teeny","event":{"kind":"WorkflowNodeFinished","workflow_id":"reflect","run_id":"01a1c40abb0b-0000000003a3","node_id":"look","status":"ok","elapsed_ms":162137,"agent_run_id":"01a1c40abc3e-0000000003a4"},"at_millis":1794290562443}
+{"seq":1172,"company":"teeny","event":{"kind":"WorkflowNodeStarted","workflow_id":"reflect","run_id":"01a1c40abb0b-0000000003a3","node_id":"learn"},"at_millis":1794290562817}
+{"seq":1173,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1c40d36fe-0000000003b6","attempt":1,"to":"pending"},"at_millis":1794290562846}
+{"seq":1174,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1c40d36fe-0000000003b6","attempt":1,"from":"pending","to":"running"},"at_millis":1794290562860}

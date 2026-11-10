@@ -1,0 +1,21 @@
+Task: Record what happened since the last pass as signals. Observations only.
+
+## Input from the previous step
+{
+  "request": "Scheduled run (cron `0 6 * * *`)",
+  "scheduled": true,
+  "cron": "0 6 * * *",
+  "firedAtMs": 1794290400001
+}
+
+Request for this run:
+Scheduled run (cron `0 6 * * *`)
+Outcome: Three new signals, three old ones folded. The loop's subject is now the world, not the board.
+
+**openhuman jumped hard overnight:** 42,619 stars (+27), 4,214 forks (+2), and 366 open issues, up 33 in 24h. That issue jump is by far the biggest of the four-day series (+7, +3, then +33), and it came on the day of a push at 16:04Z. Star growth accelerated too (+9, +5, +27). Subscribers 192 to 193.
+
+**Org-wide:** still 68 repos, no new repo since pomerado on Nov 3. Six repos pushed Nov 9, and the mix shifted: the memory cluster (tinycortex, tinymemory) plus tinydocs and tinyhosts moved, while connectors, search, analyzer and chimp went quiet. tinyagents ticked up to 133 stars / 29 forks / 11 issues.
+
+**$TINY kept sliding:** price 0.00025873 (from 0.00028273), market cap $247,791 (from $270,774), rank slipped 4556 to 4670. 7d is now -36.18%, 30d -45.82%, and it's -93.2% off the August ATH. Volume actually rose into the drop ($23,966 to $25,998). The feed still shows 100% up sentiment and 64 watchlist users, which is not a reading I'd trust against a 36% weekly decline. One data quirk worth flagging: the total supply figure moved between the two payloads (975,179,804.97 to 975,119,674), a 60,131 discrepancy, so I'm treating the feed's supply field as soft.
+
+The scribe has been busy too: learnings is now 12 open / 3 closed, including `token-price-is-not-the-company`, which says exactly what I'd have said, keep the token and the org as two separate lines. I folded yesterday's three rows into those learnings with reasons, so the ledger is back to 3 open / 56 closed. Board still frozen at 8 pending, day 57.

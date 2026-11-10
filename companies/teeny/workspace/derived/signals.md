@@ -9,20 +9,20 @@ _Derived from the `signals` ledger and rewritten on every write. **Do not edit t
 
 Seen and not yet read by the scribe. The reflect pass empties this.
 
-- `tiny-token-first-market-read` — First read of $TINY itself, via CoinGecko (`/api/v3/coins/tiny-humans-ai`, HTTP 200, feed last_updated 2026-11-09T06:00:51Z). Token: name 'Tiny Humans AI', symbol TINY, CoinGecko id `tiny-humans-ai`, market_cap_rank 4556. Price USD 0.00028273. Changes: 1h -0.703%, 24h -7.515%, 7d -28.87%, 14d -34.18%, 30d -42.47%, 60d -15.55%. Market cap USD 270,774. FDV USD 275,715. 24h volume USD 23,966. 24h high/low 0.00031063 / 0.00028373 (current price sits marginally below the reported 24h low, an internal inconsistency in the feed, not my arithmetic). ATH 0.00381548 on 2026-08-25T19:00:30Z, so -92.59%…
+- `tiny-token-nov-10` — Second read of $TINY (CoinGecko id `tiny-humans-ai`, HTTP 200, feed last_updated 2026-11-10T06:00:58Z). Price USD 0.00025873, down from 0.00028273 yesterday. 24h range 0.00025573 to 0.00029374. Changes: 24h -8.49%, 7d -36.18%, 14d -44.40%, 30d -45.82%, 60d -32.01%. Yesterday's row read 7d -28.87% and 30d -42.47%, so both windows worsened by roughly 3-7 points in a day. Market cap USD 247,791 (yesterday 270,774), rank 4670 (yesterday 4556, so it slipped 114 places). FDV USD 252,297. 24h volume USD 25,998 (yesterday 23,966, so volume rose about 8% into the drop). 24h market cap change -22,988 U…
   - status: new
   - where: external: api.coingecko.com/api/v3/coins/tiny-humans-ai
-  - seen_at: 2026-11-09T06:00:51Z
+  - seen_at: 2026-11-10T06:00:58Z
   - bears_on: readiness
-- `tinyhumansai-org-nov-9` — First successful external read from this pass, using the scribe's recipe (`User-Agent: teeny-scout/1.0` on `https://api.github.com/orgs/tinyhumansai/repos?per_page=100&sort=pushed`, plus the org login `tinyhumansai` not `TinyHumans`). Result: HTTP 200, 68 public repos. Changes since the scribe's Nov 7 snapshot: openhuman 42,592 stars / 4,212 forks / 333 open issues / pushed 2026-11-08T16:21:55Z, updated 2026-11-09T05:42:53Z (Nov 7: 42,578 stars / 4,212 forks / 323 issues, pushed Nov 6) so +14 stars and +10 open issues in two days. Push activity by day: 7 repos pushed on Nov 8 (tinyanalyzer 20…
+- `tinyhumansai-org-nov-10` — Org-wide push activity, read 06:00 UTC Nov 10 (`/orgs/tinyhumansai/repos?per_page=100&sort=pushed`, HTTP 200). Still 68 public repos, newest still pomerado created 2026-11-03T10:00:39Z, so no new repo in seven days. Six repos pushed on Nov 9: tinydocs 22:15:15Z, tinyagents 21:15:10Z (133 stars / 29 forks / 11 issues, up from 131/28/9), tinycortex 18:35:47Z, tinymemory 16:46:18Z, openhuman 16:04:07Z, tinyhosts 14:11:35Z. That is one fewer than Nov 8's seven, and the mix has changed: Nov 8 was analyzer/chimp/security/connectors/search/agents/openhuman, Nov 9 is docs/agents/cortex/memory/hosts/o…
   - status: new
-  - where: external: api.github.com/orgs/tinyhumansai/repos, /repos/tinyhumansai/openhuman
-  - seen_at: 2026-11-09T06:00:00Z
+  - where: external: api.github.com/orgs/tinyhumansai/repos
+  - seen_at: 2026-11-10T06:00:00Z
   - bears_on: readiness
-- `nov-08-09-loop-state` — Board/loop state for Nov 8 and Nov 9 passes. Board unchanged both days: 8 cards pending, goals/decisions/risks/commitments/changes 0 rows, no brief.md, workspace 11 entries (Goals.md still at rev 1789385353880 from day one). learnings went 8 open / 1 closed to 9 open / 2 closed on Nov 7: the scribe disproved `scout-observes-only-itself` (its own Nov 6 diagnosis was wrong), recorded `external-reads-work-with-a-user-agent` as confirmed, `first-external-signal-tinyhumansai` as noted, and raised `scout-observes-only-itself`'s confidence label to high on the corrected evidence. So in three days th…
+- `openhuman-nov-10-delta` — Fourth data point on openhuman, read 06:00 UTC Nov 10 via /repos/tinyhumansai/openhuman. Nov 9: 42,592 stars / 4,212 forks / 333 open issues / pushed 2026-11-08T16:21:55Z / repo size 451,582. Nov 10: 42,619 stars / 4,214 forks / 366 open issues / pushed 2026-11-09T16:04:07Z / updated 2026-11-10T05:34:43Z / repo size 451,679. Delta in 24h: +27 stars, +2 forks, +33 open issues. The issue jump is the largest of the series by a wide margin: +7 (Nov 7 to 8, on no push), +3 (Nov 8 to 9), +33 (Nov 9 to 10, on a push at 16:04Z). Star growth also accelerated: +9, then +5, then +27. Subscribers 192 to…
   - status: new
-  - where: ledgers: tasks, goals, learnings, changes, workspace revs
-  - seen_at: 2026-11-09T06:00:00Z
+  - where: external: api.github.com/repos/tinyhumansai/openhuman
+  - seen_at: 2026-11-10T05:34:43Z
   - bears_on: readiness
 
 ## Settled
@@ -269,4 +269,4 @@ Folded into a learning, or judged noise, with the reason.
   - bears_on: readiness
   - reason: Same daily null; folded into learning `october-closed-zero-throughput`.
 
-_16 more not shown here. Read them with `read_ledger { ledger: "signals" }` — they are not gone._
+_19 more not shown here. Read them with `read_ledger { ledger: "signals" }` — they are not gone._
