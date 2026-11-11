@@ -1,0 +1,37 @@
+Task: Fold the new signals and the settled runs into learnings; update Goals.md to match the goals ledger.
+
+## Input from the previous step
+Four signals today, including a new kind: the org's public event stream, which shows who's actually doing the work rather than just repo counters.
+
+**openhuman:** 42,643 stars (+24), 367 open issues (+1). Yesterday's +33 issue spike was a burst, not a new rate. Star growth held high (+27 then +24), and repo size grew 436 KB in a day, the largest in the series.
+
+**Org:** only 3 repos pushed in 24h (openintents, tinywallet, openhuman), down from 6-7 the two days before, and activity shifted to the wallet/intents pair. Still 68 repos, nothing new since pomerado on Nov 3.
+
+**Event stream, first read:** 100 events, 84 of them today. By actor it's mostly bots: coderabbitai 45, chatgpt-codex-connector 13, tinysweeper 9, dependabot 8, Copilot 4. senamakel has 17, four other humans one each. 88 of 100 events are in openhuman, and the busiest PR (#8655, 10 events) is CI plumbing on `lanes-plan.mjs` from a fork branch called `main-ci-regressions`, with CodeRabbit demanding changes twice overnight. So a lot of the visible churn is review-bot chatter on CI regressions, not product work. Worth knowing: the request layer redacted GitHub event ids to `[REDACTED_PII_PHONE]`, so ids aren't usable, but actors, repos and timestamps are.
+
+**$TINY bounced:** 0.00028671, +10.81% on 24h, the first up day in the series. Market cap $274,585, rank back up 160 places to 4510. 7d improved to -19.60% (from -36.18%). Volume rose to $27,855. Total supply matched yesterday's figure exactly, so the 60k discrepancy I flagged Nov 10 was a one-off in the Nov 9 payload, not a moving denominator.
+
+Board still frozen at 8 pending, day 58.
+
+Request for this run:
+Scheduled run (cron `0 6 * * *`)
+Outcome: Day 58. New instrument today (the event stream), and it immediately taught the same lesson the issue counter taught yesterday: raw activity counts flatter this org, and the corrections are all in the actor mix.
+
+I re-read before folding. openhuman confirms at 42,643 / 4,213 / 367, pushed 2026-11-10T22:15:44Z, size 452,115. My second read of the event stream caught something the scout's snapshot couldn't: CodeRabbit left three consecutive changes_requested reviews on PR #8655 overnight (05:05, 05:23, 05:34), and senamakel's 05:17 comment explains the failing Tauri lane: TinySecurity protected-path queries fail closed when tests share one process, so rust-cov moved to nextest via `OH_COV_RUNNER`. That PR is the "clear pre-existing main failures" fix, from a fork branch called `main-ci-regressions`, which tells you what state main's CI is in.
+
+New learning `event-stream-shows-bots-not-work` (confirmed): 79 of the scout's 100 events came from five bots (coderabbitai 45, chatgpt-codex-connector 13, tinysweeper 9, dependabot 8, Copilot 4). senamakel has 17, four other humans one each. The honest sentence is "45 of 100 events were coderabbitai", not "100 events of activity". The counters say the repo is popular; the event stream says the visible churn is mostly automated review loops. One tooling note folded in: event ids were redacted in the scout's read and unredacted in mine, so nothing should key on event ids.
+
+`openhuman-first-measured-delta` extended to five points. The issue spike is over: +33 was followed by +1, confirming yesterday's triage-sweep reading rather than a new backlog rate. Star growth held at +27, +24, the steadiest signal in the series. Org pushes dropped to 3 (openintents, tinywallet, openhuman) with the mix shifted to the wallet/intents pair. One small correction to the scout's row: subscribers are 192 again, so the 193 from Nov 10 didn't hold; single-day subscriber moves are noise at this scale.
+
+`token-price-is-not-the-company` extended with the third read: 0.00028671, +10.81%, the first up day, rank back to 4510. The supply discrepancy from Nov 10 is settled: today's total matches Nov 10's exactly, so it was a one-off in the Nov 9 payload, not a moving denominator. Still a separate line, never combined with the org.
+
+`board-card-satisfied-but-pending` evidence ticked to day 58. Same shape: 8 pending, 6 real, one card met for 57 days.
+
+Goals.md: still cannot be written or verified by me. The escalation from yesterday is parked with the operator; I'm not re-asking while it waits. The sandbox draft now carries the Nov 11 baseline and both reading rules.
+
+**Reflect pass for 2026-11-11 06:00 UTC:**
+
+- **Signals seen:** `tinyhumansai-events-nov-11`, `tiny-token-nov-11`, `tinyhumansai-org-nov-11`, `openhuman-nov-11-delta` (all still `new`, I cannot fold them)
+- **Learnings:** `event-stream-shows-bots-not-work` (confirmed), `openhuman-first-measured-delta` extended to five points, `token-price-is-not-the-company` extended, `board-card-satisfied-but-pending` day 58
+- **Goals.md:** cannot be written or verified by me; goals ledger 0 rows; escalation parked with operator since Nov 10
+- **Gate:** change needed, unchanged: the scout's retry policy, the scribe's missing grants, the board's two stale cards. The event stream adds nothing to the gate itself but gives the curator a concrete first target if a definition change ever lands: the daily report template should name actor mixes, not raw event counts.
