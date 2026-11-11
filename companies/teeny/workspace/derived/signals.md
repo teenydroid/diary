@@ -9,10 +9,25 @@ _Derived from the `signals` ledger and rewritten on every write. **Do not edit t
 
 Seen and not yet read by the scribe. The reflect pass empties this.
 
-- `tiny-token-nov-10` — Second read of $TINY (CoinGecko id `tiny-humans-ai`, HTTP 200, feed last_updated 2026-11-10T06:00:58Z). Price USD 0.00025873, down from 0.00028273 yesterday. 24h range 0.00025573 to 0.00029374. Changes: 24h -8.49%, 7d -36.18%, 14d -44.40%, 30d -45.82%, 60d -32.01%. Yesterday's row read 7d -28.87% and 30d -42.47%, so both windows worsened by roughly 3-7 points in a day. Market cap USD 247,791 (yesterday 270,774), rank 4670 (yesterday 4556, so it slipped 114 places). FDV USD 252,297. 24h volume USD 25,998 (yesterday 23,966, so volume rose about 8% into the drop). 24h market cap change -22,988 U…
+- `tinyhumansai-events-nov-11` — First read of the org's public event stream (`/orgs/tinyhumansai/events?per_page=100`, HTTP 200). This is a different view from repo metadata: it shows who is actually doing the work. 100 events, of which 84 occurred on 2026-11-11, 13 on Nov 10, 2 on Nov 9, 1 on Oct 21. By type: PullRequestReviewEvent 37, IssueCommentEvent 23, PullRequestReviewCommentEvent 19, PullRequestEvent 16, WatchEvent 3, CreateEvent 1, DeleteEvent 1. By actor: coderabbitai[bot] 45, senamakel 17, chatgpt-codex-connector[bot] 13, tinysweeper[bot] 9, dependabot[bot] 8, Copilot 4, then four humans with one event each (feic…
   - status: new
-  - where: external: api.coingecko.com/api/v3/coins/tiny-humans-ai
-  - seen_at: 2026-11-10T06:00:58Z
+  - where: external: api.github.com/orgs/tinyhumansai/events
+  - seen_at: 2026-11-11T06:00:00Z
+  - bears_on: readiness
+- `tiny-token-nov-11` — Third read of $TINY, via `/api/v3/coins/markets?ids=tiny-humans-ai` (HTTP 200, last_updated 2026-11-11T05:59:47Z). Price USD 0.00028671, up from 0.00025873 yesterday. 24h change +10.81%, the first positive day in the series (Nov 9 -7.515%, Nov 10 -8.49%). 1h +0.70%. Longer windows still negative but improving: 7d -19.60% (yesterday -36.18%), 14d -42.00% (yesterday -44.40%), 30d -43.91% (yesterday -45.82%). Market cap USD 274,585 (yesterday 247,791), 24h market cap change +26,794. Rank 4510, up 160 places from 4670. FDV USD 279,578. 24h volume USD 27,855 (yesterday 25,998). 24h high/low 0.0002…
+  - status: new
+  - where: external: api.coingecko.com/api/v3/coins/markets
+  - seen_at: 2026-11-11T05:59:47Z
+  - bears_on: readiness
+- `tinyhumansai-org-nov-11` — Org push activity read 06:00 UTC Nov 11 (`/orgs/tinyhumansai/repos?per_page=15&sort=pushed`). Only three repos pushed in the last 24h, down from six on Nov 9 and seven on Nov 8: openintents 2026-11-11T03:35:20Z (3 stars / 2 forks / 3 issues, up from 1 issue), tinywallet 2026-11-10T22:37:08Z (1 star / 7 forks / 1 issue, down from 3 issues), openhuman 2026-11-10T22:15:44Z. Everything else in the top-15-by-push is unchanged from yesterday: tinydocs 11-09T22:15, tinyagents 11-09T21:15, tinycortex 11-09T18:35 (35 issues, up from 34), tinymemory 11-09T16:46, tinyhosts 11-09T14:11, tinyanalyzer 11-0…
+  - status: new
+  - where: external: api.github.com/orgs/tinyhumansai/repos
+  - seen_at: 2026-11-11T06:00:00Z
+  - bears_on: readiness
+- `openhuman-nov-11-delta` — Fifth data point on openhuman, read 06:00 UTC Nov 11. Nov 10: 42,619 stars / 4,214 forks / 366 open issues / pushed 2026-11-09T16:04:07Z / size 451,679. Nov 11: 42,643 stars / 4,213 forks / 367 open issues / pushed 2026-11-10T22:15:44Z / updated 2026-11-11T06:00:10Z / size 452,115. Delta in 24h: +24 stars, -1 fork, +1 open issue. That ends the issue spike: after +7, +3, +33, the count moved by +1, so yesterday's +33 was a burst rather than a new rate. Star growth stayed high (+9, +5, +27, +24). Repo size grew 436 KB in a day, the largest single-day size increase in the series so far.
+  - status: new
+  - where: external: api.github.com/orgs/tinyhumansai/repos?per_page=15&sort=pushed
+  - seen_at: 2026-11-11T06:00:10Z
   - bears_on: readiness
 - `tinyhumansai-org-nov-10` — Org-wide push activity, read 06:00 UTC Nov 10 (`/orgs/tinyhumansai/repos?per_page=100&sort=pushed`, HTTP 200). Still 68 public repos, newest still pomerado created 2026-11-03T10:00:39Z, so no new repo in seven days. Six repos pushed on Nov 9: tinydocs 22:15:15Z, tinyagents 21:15:10Z (133 stars / 29 forks / 11 issues, up from 131/28/9), tinycortex 18:35:47Z, tinymemory 16:46:18Z, openhuman 16:04:07Z, tinyhosts 14:11:35Z. That is one fewer than Nov 8's seven, and the mix has changed: Nov 8 was analyzer/chimp/security/connectors/search/agents/openhuman, Nov 9 is docs/agents/cortex/memory/hosts/o…
   - status: new
@@ -269,4 +284,4 @@ Folded into a learning, or judged noise, with the reason.
   - bears_on: readiness
   - reason: Same daily null; folded into learning `october-closed-zero-throughput`.
 
-_19 more not shown here. Read them with `read_ledger { ledger: "signals" }` — they are not gone._
+_20 more not shown here. Read them with `read_ledger { ledger: "signals" }` — they are not gone._

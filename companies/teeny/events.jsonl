@@ -1190,3 +1190,13 @@
 {"seq":1189,"company":"teeny","event":{"kind":"WorkflowNodeStarted","workflow_id":"reflect","run_id":"01a1c931170c-0000000003d4","node_id":"look"},"at_millis":1794376800103}
 {"seq":1190,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1c9311760-0000000003d5","attempt":1,"to":"pending"},"at_millis":1794376800127}
 {"seq":1191,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1c9311760-0000000003d5","attempt":1,"from":"pending","to":"running"},"at_millis":1794376800183}
+{"seq":1192,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794376884093}
+{"seq":1193,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794376884121}
+{"seq":1194,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794376900718}
+{"seq":1195,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794376900750}
+{"seq":1196,"company":"teeny","event":{"kind":"WorkspaceChanged","node_id":"01a09fd9a24c-000000000016","change":"updated"},"at_millis":1794376903707}
+{"seq":1197,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1c9311760-0000000003d5","attempt":1,"from":"running","to":"succeeded"},"at_millis":1794376906925}
+{"seq":1198,"company":"teeny","event":{"kind":"WorkflowNodeFinished","workflow_id":"reflect","run_id":"01a1c931170c-0000000003d4","node_id":"look","status":"ok","elapsed_ms":106834,"agent_run_id":"01a1c9311760-0000000003d5"},"at_millis":1794376906930}
+{"seq":1199,"company":"teeny","event":{"kind":"WorkflowNodeStarted","workflow_id":"reflect","run_id":"01a1c931170c-0000000003d4","node_id":"learn"},"at_millis":1794376906946}
+{"seq":1200,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1c932b8be-0000000003e5","attempt":1,"to":"pending"},"at_millis":1794376906953}
+{"seq":1201,"company":"teeny","event":{"kind":"RunStatusChanged","run_id":"01a1c932b8be-0000000003e5","attempt":1,"from":"pending","to":"running"},"at_millis":1794376906972}
