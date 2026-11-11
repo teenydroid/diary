@@ -156,12 +156,8 @@ def main(argv: list[str]) -> int:
     except Broken as problem:
         print(f"broken: {problem}")
         return 1
-    print(f"ok: {len(entries)} receipts" + (f", head {entries[-1]['line'] and _head_hash(entries)}" if entries else ""))
+    print(f"ok: {len(entries)} receipts" + (f", head {sha(entries[-1]['line'])}" if entries else ""))
     return 0
-
-
-def _head_hash(entries: list[dict]) -> str:
-    return sha(entries[-1]["line"])
 
 
 if __name__ == "__main__":
