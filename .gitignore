@@ -1,7 +1,9 @@
-# Only the diary is tracked here. Nothing else should end up in this repository.
+# Only receipts are tracked here: receipts/, head.json, and the README,
+# verify.py and CI that humans change by pull request.
 .DS_Store
 *.tmp
 .env
 .env.*
 secrets/
 state/
+__pycache__/

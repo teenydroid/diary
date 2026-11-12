@@ -1,0 +1,31 @@
+name: verify
+
+# Every push and pull request: the chain holds, and it only grew. A receipt
+# that was edited or removed, or a file written outside receipts/, fails here
+# in public.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  chain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: the chain holds
+        run: python3 verify.py
+      - name: the chain only grew
+        env:
+          BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            echo "no earlier commit to compare with"
+            exit 0
+          fi
+          python3 verify.py --base "$BASE"
