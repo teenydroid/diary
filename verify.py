@@ -15,8 +15,18 @@ the sha256 of the line before it (64 zeros for the first), each `commit` is 64
 hex characters, and head.json is {"hash": <sha256 of the last line>, "seq": N}.
 
 --base REF also checks the chain at REF is an exact prefix of this one, and
-that nothing outside receipts/ and head.json changed since REF. CI runs it on
-every push, so a receipt cannot be edited or removed quietly.
+that nothing else published changed since REF in a way it may not: the
+days/ and memory/ chains only grow, a page in days/ or accounts/ is written
+once and never changed, and only the numbers (stats/, world/, wallet.json),
+the chain heads and memory/MEMORY.md are rewritten. CI runs it on every
+push, so a receipt or a published page cannot be edited or removed quietly.
+
+days/ (a diary page per finished day) and memory/ (Teeny's memory page, one
+commit per dream) are the two folders of free text, each with a hash chain
+of its own (chain.jsonl, head.json): {"seq", "prev", "sha256", ...}, where
+sha256 is of the page's bytes. A days/ line names its page by "date"; a
+memory/ line names its snapshot, and the newest one must be memory/MEMORY.md
+(an older one is the page as its own commit left it).
 
 --reveal checks that sha256(salt || canonical(record)) equals the `commit` of
 receipt `seq`, which proves that receipt stands for that exact record.
@@ -118,17 +128,84 @@ def from_git(ref: str) -> tuple[dict[str, str], str | None]:
     return files, head
 
 
+#: Published files that are rewritten as they move: the numbers, the heads of
+#: the text chains, and the memory page (its chain keeps every version's hash).
+REWRITTEN = {"wallet.json", "days/head.json", "memory/head.json", "memory/MEMORY.md"}
+REWRITTEN_DIRS = ("stats/", "world/")
+#: Written once and never changed: a finished day's page, a closed week.
+WRITTEN_ONCE_DIRS = ("days/", "accounts/")
+#: Append-only: each version must start with the one before.
+CHAINS = ("days/chain.jsonl", "memory/chain.jsonl")
+#: The README, this script and CI are humans' to change, by pull request.
+HUMANS = {"README.md", "verify.py", ".gitignore"}
+
+
+def check_text_chain(root: Path, folder: str) -> int:
+    """days/ or memory/: the chain holds, the head matches, and the pages
+    match their hashes (every day; the newest memory snapshot). Returns its
+    length."""
+    chain, head = root / folder / "chain.jsonl", root / folder / "head.json"
+    seq, prev, last = 0, GENESIS, None
+    lines = chain.read_text(encoding="ascii").splitlines() if chain.is_file() else []
+    for number, line in enumerate(lines, 1):
+        where = f"{folder}/chain.jsonl:{number}"
+        try:
+            entry = json.loads(line)
+        except ValueError:
+            raise Broken(f"{where}: not JSON") from None
+        if not isinstance(entry, dict) or canonical(entry) != line:
+            raise Broken(f"{where}: not canonical JSON")
+        if entry.get("seq") != seq + 1 or entry.get("prev") != prev:
+            raise Broken(f"{where}: does not follow the line before")
+        if not (isinstance(entry.get("sha256"), str) and HEX64.fullmatch(entry["sha256"])):
+            raise Broken(f"{where}: sha256 is not a sha256")
+        if folder == "days":
+            page = root / "days" / f"{entry.get('date')}.md"
+            if not page.is_file() or hashlib.sha256(page.read_bytes()).hexdigest() != entry["sha256"]:
+                raise Broken(f"{where}: the page for {entry.get('date')} does not match")
+        seq, prev, last = entry["seq"], sha(line), entry
+    if folder == "memory" and last is not None:
+        page = root / "memory" / "MEMORY.md"
+        if not page.is_file() or hashlib.sha256(page.read_bytes()).hexdigest() != last["sha256"]:
+            raise Broken("memory/MEMORY.md is not the newest snapshot in memory/chain.jsonl")
+    if seq or head.is_file():
+        try:
+            stated = json.loads(head.read_text(encoding="ascii"))
+        except (OSError, ValueError):
+            raise Broken(f"{folder}/head.json is missing or not JSON") from None
+        if stated != {"seq": seq, "hash": prev}:
+            raise Broken(f"{folder}/head.json says {stated}, the chain ends at seq {seq} hash {prev}")
+    return seq
+
+
 def check_growth(base: str, now: list[dict]) -> None:
     before = check(*from_git(base))
     if [e["line"] for e in now[: len(before)]] != [e["line"] for e in before]:
         raise Broken(f"the chain at {base} is not a prefix of this one: a receipt was edited or removed")
-    changed = [n for n in _git("diff", "--name-only", base, "HEAD").splitlines() if n]
-    others = [n for n in changed if n != "head.json" and not n.startswith("receipts/")]
-    # The README, this script and CI are humans' to change, by pull request.
-    allowed = {"README.md", "verify.py", ".gitignore"}
-    others = [n for n in others if n not in allowed and not n.startswith(".github/")]
-    if others:
-        raise Broken(f"changed outside receipts/: {', '.join(others)}")
+    changes = [line.split("\t") for line in _git("diff", "--name-status", "--no-renames", base, "HEAD").splitlines() if line]
+    wrong = []
+    for status, name in ((c[0], c[-1]) for c in changes):
+        if name == "head.json" or name.startswith("receipts/") or name in HUMANS or name.startswith(".github/"):
+            continue
+        if name in CHAINS:
+            old = _git("show", f"{base}:{name}") if status != "A" else ""
+            if status == "D" or not (root_text(name)).startswith(old):
+                wrong.append(f"{name} (a chain may only grow)")
+            continue
+        if name in REWRITTEN or name.startswith(REWRITTEN_DIRS):
+            continue
+        if name.startswith(WRITTEN_ONCE_DIRS):
+            if status != "A":
+                wrong.append(f"{name} (written once, never changed)")
+            continue
+        wrong.append(name)
+    if wrong:
+        raise Broken(f"changed where it may not: {', '.join(wrong)}")
+
+
+def root_text(name: str) -> str:
+    path = Path.cwd() / name
+    return path.read_text(encoding="ascii") if path.is_file() else ""
 
 
 def check_reveal(path: Path, entries: list[dict]) -> None:
@@ -149,6 +226,8 @@ def main(argv: list[str]) -> int:
     args = parser.parse_args(argv)
     try:
         entries = check(*from_disk(Path.cwd()))
+        for folder in ("days", "memory"):
+            check_text_chain(Path.cwd(), folder)
         if args.base:
             check_growth(args.base, entries)
         if args.reveal:
