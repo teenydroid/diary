@@ -14,3 +14,4 @@
 {"prev":"4ab74fe1ca062645707b9a5b32726ab2afed0a694a340729a553ddfc468313fd","seq":14,"sha256":"0fcb2bbc1953e814ab92c5d6632e4c0744fdb330e99e196d6990843dc7035a90","slot":"night","snapshot":"20261120T203636Z-night"}
 {"prev":"75d8f1a35516a45ae406e7f3f7dd67b43d9e058461cfe6fff8442b11408e3daa","seq":15,"sha256":"cfc6445da3eab3e30da723697c9be106ccd2d8fcf0257b168b5dbfa30cda6a6b","slot":"midday","snapshot":"20261122T083726Z-midday"}
 {"prev":"77784db2fbe87f606dce5a362c4ac60b7949dde52b73448437114f92f13b5d6a","seq":16,"sha256":"afaed188b32a44ed5b38bf9a34c2d6569be0efeff66cfa6532858a48d8716b1a","slot":"night","snapshot":"20261122T203602Z-night"}
+{"prev":"b425d5e5248ab2af72d84d18d9211decdb4fcd6ce6dee4055a7965ffdcbf716f","seq":17,"sha256":"b29f584d1cffef203dfcb29aac6bfe2f4962a2bc5331603022b8d7727af932af","slot":"night","snapshot":"20261123T203222Z-night"}
